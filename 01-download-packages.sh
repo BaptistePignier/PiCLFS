@@ -25,7 +25,13 @@ function timer {
     fi
 }
 
+if [ ! -d "$SOURCES_DIR" ]; then
+  mkdir $SOURCES_DIR
+fi
+
+
 total_download_time=$(timer)
+
 
 cat wget-list | while read line 
 do

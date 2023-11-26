@@ -66,32 +66,31 @@ function check_environment_variable {
 
 function check_tarballs {
     LIST_OF_TARBALLS="
-      autoconf-2.69.tar.xz
-      automake-1.16.1.tar.xz
-      binutils-2.33.1.tar.xz
-      bison-3.5.tar.xz
-      confuse-3.2.2.tar.xz
-      dosfstools-4.1.tar.xz
-      e2fsprogs-1.45.4.tar.gz
-      elfutils-0.178.tar.bz2
-      fakeroot_1.24.orig.tar.gz
-      flex-2.6.3.tar.gz
-      gawk-5.0.1.tar.xz
-      gcc-9.2.0.tar.xz
-      genimage-11.tar.xz
-      glibc-2.30.tar.xz
-      gmp-6.1.2.tar.xz
-      libtool-2.4.6.tar.xz
-      m4-1.4.18.tar.xz
-      mpc-1.1.0.tar.gz
-      mpfr-4.0.2.tar.xz
-      mtools-4.0.23.tar.bz2
-      openssl-1.1.1d.tar.gz
-      pkgconf-1.6.3.tar.xz
-      raspberrypi-kernel_1.20200114-1.tar.gz
-      util-linux-2.35.tar.xz
-      zlib-1.2.11.tar.xz
-    "
+      autoconf.tar.xz
+      automake.tar.xz
+      binutils.tar.xz
+      bison.tar.gz
+      confuse.tar.xz
+      dosfstools.tar.gz
+      e2fsprogs.tar.gz
+      elfutils.tar.bz2
+      fakeroot.tar.gz
+      flex.tar.gz
+      gawk.tar.xz
+      gcc.tar.xz
+      genimage.tar.xz
+      glibc.tar.xz
+      gmp.tar.xz
+      libtool.tar.xz
+      m4.tar.xz
+      mpc.tar.gz
+      mpfr.tar.xz
+      mtools.tar.bz2
+      openssl.tar.gz
+      pkgconf.tar.xz
+      kernel.tar.gz
+      util-linux.tar.xz
+      zlib.tar.gz"
 
     for tarball in $LIST_OF_TARBALLS ; do
         if ! [[ -f $SOURCES_DIR/$tarball ]] ; then
