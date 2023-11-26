@@ -27,6 +27,6 @@ function timer {
 
 total_download_time=$(timer)
 
-wget -c -i $WORKSPACE_DIR/wget-list -P $SOURCES_DIR
+wget -c --content-disposition -i $WORKSPACE_DIR/wget-list -P $SOURCES_DIR
 
 success "\nTotal download time: $(timer $total_download_time)\n"
