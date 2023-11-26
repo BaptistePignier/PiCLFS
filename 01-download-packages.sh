@@ -27,6 +27,14 @@ function timer {
 
 total_download_time=$(timer)
 
-wget -c --content-disposition -i $WORKSPACE_DIR/wget-list -P $SOURCES_DIR
+cat wget-list | while read line 
+do
+   split=(${line// / })
+   name=${split[0]}
+   link=${split[1]} 
+   echo "Downloading ${name}"
+   destination="$SOURCES_DIR/$name"
+   wget -q --show-progress -c --content-disposition  -O $destination $link
+done
 
 success "\nTotal download time: $(timer $total_download_time)\n"
