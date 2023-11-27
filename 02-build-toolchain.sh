@@ -353,14 +353,12 @@ make -j$PARALLEL_JOBS install -C $BUILD_DIR/binutils/binutils-build
 rm -rf $BUILD_DIR/binutils
 
 step "[15/25] Gcc - Static"
-tar -Jxf $SOURCES_DIR/gcc.tar.xz -C $BUILD_DIR
+extract $SOURCES_DIR/gcc.tar.xz $BUILD_DIR
 extract $SOURCES_DIR/gmp.tar.xz $BUILD_DIR/gcc
-mv -v $BUILD_DIR/gcc/gmp $BUILD_DIR/gcc/gmp
 extract $SOURCES_DIR/mpfr.tar.xz $BUILD_DIR/gcc
-mv -v $BUILD_DIR/gcc/mpfr $BUILD_DIR/gcc/mpfr
 extract $SOURCES_DIR/mpc.tar.gz $BUILD_DIR/gcc
-mv -v $BUILD_DIR/gcc/mpc $BUILD_DIR/gcc/mpc
 mkdir -pv $BUILD_DIR/gcc/gcc-build
+
 ( cd $BUILD_DIR/gcc/gcc-build && \
     MAKEINFO=missing \
     CFLAGS_FOR_TARGET="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os" \
